@@ -1,169 +1,121 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  background-color: #e6e6e6;
+  background-color: rgb(230, 230, 230);
 }
 
 .App {
   overflow-x: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 100%;
   position: relative;
-  display: -ms-grid;
   display: grid;
   overflow-y: hidden;
-  -ms-grid-columns: (1fr)[12];
-      grid-template-columns: repeat(12, 1fr);
-  -ms-grid-rows: 90px calc(100vh - 90px);
-      grid-template-rows: 90px calc(100vh - 90px);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 90px calc(100vh - 90px);
 }
 
 .btn {
   cursor: pointer;
   outline: none;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   font-size: 1rem;
   font-weight: 400;
-  padding: .5em 0;
+  padding: 0.5em 0;
   font-weight: 600;
-  -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
   word-wrap: break-word;
 }
 
 .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   gap: 2.5rem;
   position: relative;
   background-color: white;
   padding: 2.25em 1.5em;
   height: 180px;
-  border-radius: .5rem;
-  -webkit-box-shadow: 2px 2px 4px 0 #7d7d7d;
-          box-shadow: 2px 2px 4px 0 #7d7d7d;
-  -webkit-transition: background-color 150ms ease-in-out;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px 0 rgb(125, 125, 125);
   transition: background-color 150ms ease-in-out;
 }
-
 .card .id {
   position: absolute;
-  top: .75rem;
+  top: 0.75rem;
   left: 1.5rem;
-  padding: .5em 1em;
-  background-color: #e6e6e6;
-  border-radius: .25rem;
+  padding: 0.5em 1em;
+  background-color: rgb(230, 230, 230);
+  border-radius: 0.25rem;
   text-transform: uppercase;
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 600;
 }
-
 .card .personal-information {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: .25rem;
+  flex-direction: column;
+  gap: 0.25rem;
   color: #444;
   height: 80%;
   width: 90%;
 }
-
 .card .personal-information .header-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  gap: .25rem;
+  align-items: baseline;
+  gap: 0.25rem;
   color: #333;
 }
-
 .card .personal-information h5, .card .personal-information h4, .card .personal-information h3 {
   font-weight: 400;
 }
-
 .card .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  gap: .75em;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 0.75em;
   width: 10%;
   height: 80%;
 }
-
 .card .buttons .btn {
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   font-weight: 600;
   color: white;
   border-color: black;
   text-overflow: ellipsis;
   width: 100px;
 }
-
 .card .buttons .edit {
   background-color: rgba(0, 180, 0, 0.7);
 }
-
 .card .buttons .edit:hover {
-  background-color: #00dc00;
+  background-color: rgb(0, 220, 0);
 }
-
 .card .buttons .delete {
   background-color: rgba(180, 4, 4, 0.7);
 }
-
 .card .buttons .delete:hover {
-  background-color: #c80404;
+  background-color: rgb(200, 4, 4);
 }
-
 .card .buttons .schedule {
   background-color: rgba(113, 170, 255, 0.7);
 }
-
 .card .buttons .schedule:hover {
-  background-color: #71aaff;
+  background-color: rgb(113, 170, 255);
 }
-
 .card .buttons .reschedule {
   background-color: rgba(122, 148, 187, 0.7);
 }
-
 .card .buttons .reschedule:hover {
-  background-color: #7a94bb;
+  background-color: rgb(122, 148, 187);
 }
-
 .card:hover {
-  background-color: #f0f0f0;
+  background-color: rgb(240, 240, 240);
 }
 
 .modal-form {
@@ -175,28 +127,19 @@ body {
   background-color: rgba(125, 125, 125, 0.5);
   z-index: 1000;
   color: #333;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .modal-form .modal-form-main {
   position: relative;
   background-color: white;
   width: 500px;
   height: auto;
   padding: 1em 2em;
-  border-radius: .75rem;
-  -webkit-box-shadow: 3px 3px 3px 0 #777;
-          box-shadow: 3px 3px 3px 0 #777;
+  border-radius: 0.75rem;
+  box-shadow: 3px 3px 3px 0 #777;
 }
-
 .modal-form .modal-form-main .close {
   position: absolute;
   top: 1rem;
@@ -204,53 +147,38 @@ body {
   background-color: transparent;
   padding: 0;
 }
-
 .modal-form .modal-form-main .close:hover {
-  color: #71aaff;
+  color: rgb(113, 170, 255);
 }
-
 .modal-form .modal-form-main .modal-form-header {
   text-transform: uppercase;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  margin: 1rem .5rem;
+  align-self: center;
+  margin: 1rem 0.5rem;
   text-align: center;
   border-bottom: 2px solid #333;
 }
-
 .modal-form .modal-form-main .modal-form-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .modal-form .modal-form-main .modal-form-body label {
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
-
 .modal-form .modal-form-main .modal-form-body input, .modal-form .modal-form-main .modal-form-body #date-time, .modal-form .modal-form-main .modal-form-body select {
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
-
 .modal-form .modal-form-main .modal-form-body textarea {
   min-height: 60px;
   resize: vertical;
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
-
 .modal-form .modal-form-main .modal-form-body .submit {
   color: white;
   margin-top: 1rem;
   background-color: rgba(113, 170, 255, 0.7);
 }
-
 .modal-form .modal-form-main .modal-form-body .submit:hover {
-  background-color: #71aaff;
+  background-color: rgb(113, 170, 255);
 }
 
 .header {
@@ -258,49 +186,39 @@ body {
   height: 90px;
   grid-column: span 12;
   background-color: #EFEFEF;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-family: 'Montserrat';
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat";
   text-align: center;
-  padding-block: .75rem;
+  padding-block: 0.75rem;
   z-index: 999;
 }
-
 .header .clockwork-logo-text {
   font-family: inherit;
   text-decoration: none;
   color: black;
   font-weight: 900;
   font-size: 1.75rem;
-  letter-spacing: .35rem;
+  letter-spacing: 0.35rem;
 }
-
 .header .clockwork-logo-text h1 {
   font-family: inherit;
   font-weight: 900;
   text-transform: uppercase;
 }
-
 .header .clockwork-logo-text h1 span {
   font-family: inherit;
   color: #36CBC2;
 }
-
 .header .logout {
-  background-color: #EFEFEF;
+  background-color: #36CBC2;
   right: 2rem;
-  padding: .5em 1em;
-  color: #36CBC2;
+  padding: 0.5em 1em;
+  color: #EFEFEF;
+  font-weight: bold;
   position: absolute;
 }
-
 .header .logout:hover {
   background-color: whitesmoke;
 }
@@ -309,23 +227,14 @@ body {
   background-color: #404040;
   width: 100vw;
   height: 100%;
-  font-family: 'Montserrat';
-  display: -webkit-box;
-  display: -ms-flexbox;
+  font-family: "Montserrat";
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   overflow: hidden;
   position: relative;
 }
-
 .landing-page .login-form-overlay {
   background-color: rgba(64, 64, 64, 0.9);
   position: absolute;
@@ -336,58 +245,37 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: 10;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .landing-page .login-form {
   background-color: #808080;
   padding: 2em 3em;
   width: 25rem;
   height: 30rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border-radius: 1.5rem;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   color: white;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   gap: 3rem;
 }
-
 .landing-page .login-form-header {
   text-align: center;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 100%;
 }
-
 .landing-page .login-form-header-text {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.75rem;
   font-family: inherit;
-  letter-spacing: .25rem;
+  letter-spacing: 0.25rem;
 }
-
 .landing-page .login-form-header .close {
   position: absolute;
   padding: 0;
@@ -395,96 +283,72 @@ body {
   right: -1rem;
   top: 0;
 }
-
 .landing-page .login-form-field {
-  -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
   width: 20rem;
   margin: 0 25%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .landing-page .login-form-field-label {
   position: relative;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
-
 .landing-page .login-form-field-label-icon {
   position: absolute;
   top: 0;
   left: 0;
 }
-
 .landing-page .login-form-field-label-text {
   margin-left: 2rem;
   font-weight: 400;
   text-transform: uppercase;
   font-size: 1.25rem;
-  letter-spacing: .25rem;
+  letter-spacing: 0.25rem;
 }
-
 .landing-page .login-form-field-input {
   outline: none;
   border: none;
-  border-radius: .25rem;
-  padding: .5em .25em;
+  border-radius: 0.25rem;
+  padding: 0.5em 0.25em;
   width: 100%;
 }
-
 .landing-page .login-form-field .password .password-toggle-btn {
   background-color: transparent;
 }
-
 .landing-page .login-form .login {
   font-size: 1.5rem;
 }
-
 .landing-page .login-form .password {
   position: relative;
 }
-
 .landing-page .login-form .password-toggle-btn {
   position: absolute;
-  top: .25rem;
-  right: .5rem;
+  top: 0.25rem;
+  right: 0.5rem;
   background-color: white;
   padding: 0;
 }
-
 .landing-page-welcome {
   margin-top: 5rem;
   font-family: inherit;
   text-transform: uppercase;
   font-weight: 900;
   font-size: 6rem;
-  letter-spacing: .35rem;
+  letter-spacing: 0.35rem;
   text-align: center;
   color: white;
 }
-
 .landing-page-welcome span {
   font-family: inherit;
   color: #36CBC2;
 }
-
 .landing-page .login {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   font-family: inherit;
-  padding: .25em 1em;
+  padding: 0.25em 1em;
   border-radius: 5rem;
   background-color: #36CBC2;
   text-transform: uppercase;
@@ -492,154 +356,110 @@ body {
   font-weight: 700;
   font-size: 1.75rem;
   gap: 1.5rem;
-  -webkit-transition: 150ms ease-in;
   transition: 150ms ease-in;
 }
-
 .landing-page .login:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
-
 .landing-page-clockwork-logo {
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-  -webkit-transition: -webkit-transform 600ms ease-in-out;
-  transition: -webkit-transform 600ms ease-in-out;
+  transform: rotate(0);
   transition: transform 600ms ease-in-out;
-  transition: transform 600ms ease-in-out, -webkit-transform 600ms ease-in-out;
 }
-
 .landing-page-clockwork-logo:hover {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 .left-section {
   grid-column: span 2;
   padding: 1.75em 1.5em;
-  background-color: #7d7d7d;
+  background-color: rgb(125, 125, 125);
   height: 100vh;
 }
 
 .navbar {
   margin-bottom: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
-
 .navbar .btn {
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
   background-color: white;
   color: black;
-  -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
   min-width: 130px;
 }
-
 .navbar .btn:hover {
   color: white;
   background-color: black;
 }
-
+.navbar .btn.disabled {
+  color: white;
+  background-color: black;
+  cursor: not-allowed;
+}
 .navbar .accounts {
   margin-bottom: 3.25rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   border-bottom: 2px solid white;
 }
-
 .navbar .accounts .accounts-header {
   text-transform: uppercase;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  letter-spacing: .1rem;
+  align-self: center;
+  letter-spacing: 0.1rem;
   margin: 1rem;
   text-align: center;
   color: white;
 }
-
 .navbar .accounts .accounts-select {
   width: 80%;
   margin-bottom: 1.5rem;
-  padding: .5em .75em;
+  padding: 0.5em 0.75em;
   font-family: inherit;
   font-weight: 600;
   outline: none;
   border: 1px solid black;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 
 .form {
   margin-top: 3.25rem;
   border-top: 2px solid white;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
   color: white;
 }
-
 .form .form-header {
   text-transform: uppercase;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  letter-spacing: .1rem;
+  align-self: center;
+  letter-spacing: 0.1rem;
   margin: 1rem;
   text-align: center;
 }
-
 .form label {
-  margin: .25rem 0;
+  margin: 0.25rem 0;
 }
-
 .form input {
-  padding: .5em .75em;
-  font-size: .75rem;
+  padding: 0.5em 0.75em;
+  font-size: 0.75rem;
   font-weight: 300;
   outline: none;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   border: 3px solid rgba(0, 0, 0, 0.6);
-  -webkit-transition: border 150ms ease-in-out;
   transition: border 150ms ease-in-out;
 }
-
 .form input:hover, .form input:focus {
-  border: 3px solid black;
+  border: 3px solid rgb(0, 0, 0);
 }
-
 .form .btn {
   margin: 2rem 0;
   background-color: white;
   color: black;
-  -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
 }
-
 .form .btn:hover {
   color: white;
   background-color: black;
@@ -648,201 +468,148 @@ body {
 .main {
   grid-column: span 10;
   height: 100%;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-rows: auto 1fr auto;
-      grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
   position: relative;
 }
-
 .main .card-container {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(400px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -ms-flex-line-pack: baseline;
-      align-content: baseline;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  justify-content: flex-start;
+  align-content: baseline;
   gap: 1rem;
   padding: 1em;
-  background-color: #e6e6e6;
+  background-color: rgb(230, 230, 230);
   position: relative;
   overflow-y: scroll;
 }
-
 .main .table-container {
   overflow-y: scroll;
   max-height: 100%;
 }
-
 .main .detail-container {
   width: 100%;
   display: table;
   padding: 0;
-  text-indent: .5rem;
-  background-color: #e6e6e6;
+  text-indent: 0.5rem;
+  background-color: rgb(230, 230, 230);
   position: relative;
 }
-
 .main .detail-container .row {
   display: table-row;
   height: 20px;
   max-height: 50px;
 }
-
 .main .detail-container .row .cell {
   display: table-cell;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-
 .main .detail-container .row:last-child .cell {
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .horizontal-navbar {
-  background-color: #646464;
+  background-color: rgb(100, 100, 100);
   padding: 1.25em;
   width: 100%;
   color: white;
   z-index: 999;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .horizontal-navbar .function {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  gap: .1rem;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  gap: 0.1rem;
+  align-items: flex-end;
 }
-
 .horizontal-navbar .function .function-title {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  letter-spacing: .1rem;
+  align-self: center;
+  letter-spacing: 0.1rem;
 }
-
 .horizontal-navbar .function .function-inputs {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-column-gap: 1rem;
-          column-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
 }
-
 .horizontal-navbar .function .function-inputs .filter-text {
   position: relative;
 }
-
 .horizontal-navbar .function .function-inputs .filter-text-input {
-  padding: .25rem;
-  border-radius: .25rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
   outline: none;
   border: none;
 }
-
 .horizontal-navbar .function .function-inputs .filter-text-icon {
   position: absolute;
-  right: .5rem;
+  right: 0.5rem;
   width: 18px;
   fill: white;
 }
-
 .horizontal-navbar .function .function-inputs .filter-select {
-  padding: .2rem;
-  border-radius: .25rem;
+  padding: 0.2rem;
+  border-radius: 0.25rem;
   outline: none;
   border: none;
 }
-
 .horizontal-navbar .limit {
   width: 200px;
 }
-
 .horizontal-navbar .limit .limit-select {
-  padding: .2rem;
-  border-radius: .25rem;
+  padding: 0.2rem;
+  border-radius: 0.25rem;
   outline: none;
   border: none;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   width: 5rem;
 }
-
 .horizontal-navbar .refresh {
   padding: 0;
   background-color: transparent;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 .pagination {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   gap: 1rem;
 }
-
 .pagination-btn {
-  padding: .5em;
-  background-color: white;
+  padding: 0.5em;
+  background-color: rgb(255, 255, 255);
 }
-
 .pagination-btn:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
 }
-
 .pagination .active {
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
+  transform: scale(1.3);
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
 }
-
 .pagination .number {
   width: calc(20px + 1em);
   border-radius: 50%;
 }
 
 .detail-header {
-  background-color: #7d7d7d;
+  background-color: rgb(125, 125, 125);
   display: table-header-group;
   height: 50px;
   max-height: 50px;
   color: white;
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 1.5px;
   text-align: center;
   text-indent: 0;
 }
-
 .detail-header .cell {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .detail {
-  font-size: .75rem;
-}
-/*# sourceMappingURL=main.css.map */
+  font-size: 0.75rem;
+}/*# sourceMappingURL=main.css.map */

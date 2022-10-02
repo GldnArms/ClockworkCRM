@@ -1,47 +1,18 @@
 import Axios from 'axios'
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 
-export default function Position({ locationOptions, changeModal, showModal }) {
-
-  const [optionElements, setOptionElements] = useState([]) 
+export default function Position({ changeModal, showModal }) {
+  
   const [newPosition, setNewPosition] = useState({ 
+    "streetAddress": '',
     "city": '',
     "state": '',
-    "position": '',
-    "manager": '',
-    "managerEmail": '',
-    "idLocations": '',
+    "name": '',
+    "phoneNumber": '',
+    "emailAddress": '',
+    "locationAliases": '',
   })
-  
-  useEffect(() => {
-    getOptionElements()
-  }, [locationOptions])
-
-  function setValues(selectedLocation){
-    if(locationOptions.length !== 0) {
-      if(!selectedLocation) return
-      const locationElement = locationOptions.find(location => location.idLocations === parseInt(selectedLocation))
-      setNewPosition(prevPosition => {
-        return{
-          ...prevPosition,
-          city: locationElement.city,
-          state: locationElement.state,
-          idLocations: locationElement.idLocations
-        }
-      })
-    }
-  }
-
-  function getOptionElements(){
-    setOptionElements (locationOptions.map((option, index) => {
-      if(index === 0) setValues(option.idLocations)
-        return(
-          <option key={option.name} value={option.idLocations}>{option.name}</option>
-        )
-    }))
-  }
-
-
+ 
   const modalRef = useRef()
 
   function closeModal(event){
@@ -63,13 +34,9 @@ export default function Position({ locationOptions, changeModal, showModal }) {
     document.addEventListener('keydown', keyPress)
     return () => document.removeEventListener('keydown', keyPress)
   }, [keyPress])
-
+  
   function handleChange(event){
     const { name, value } = event.target
-
-    if(name === 'idLocations'){
-      setValues(value)
-    }
     
     setNewPosition(prevPositionData => {
         return{
@@ -85,12 +52,11 @@ export default function Position({ locationOptions, changeModal, showModal }) {
     let values = Object.values(newPosition)
     
     if(values.some(blank)){ return }
-
+  
     await Axios.post('http://localhost:3001/position/create', {newPosition}).then(() => alert("Position Created"))
-    
     changeModal('')
     return
-  
+ 
   }
 
   return (
@@ -101,28 +67,28 @@ export default function Position({ locationOptions, changeModal, showModal }) {
 
         <div className='modal-form-body'>
           
-          <label htmlFor='idLocations'>Location ID</label>
-          <select required type='text' name='idLocations' id='idLocations' value={newPosition.idLocations} onChange={handleChange}>
-            {optionElements}
-          </select>
-
+          <label htmlFor='name'>Name</label>
+          <input required type='text' name='name' id='name' value={newPosition.name} onChange={handleChange}/>
+          
+          <label htmlFor='streetAddress'>Street Address</label>
+          <input required type='text' name='streetAddress' id='streetAddress' value={newPosition.streetAddress} onChange={handleChange}/>
+          
           <label htmlFor='city'>City</label>
           <input required type='text' name='city' id='city' value={newPosition.city} onChange={handleChange}/>
-          
+
           <label htmlFor='state'>State</label>
           <input required type='text' name='state' id='state' value={newPosition.state} onChange={handleChange}/>
-          
-          <label htmlFor='position'>Position</label>
-          <input required type='text' name='position' id='position' value={newPosition.position} onChange={handleChange}/>
 
-          <label htmlFor='manager'>Manager</label>
-          <input required type='text' name='manager' id='manager' value={newPosition.manager} onChange={handleChange}/>
+          <label htmlFor='phoneNumber'>Director's Phone Number</label>
+          <input required type='text' name='phoneNumber' id='phoneNumber' value={newPosition.phoneNumber} onChange={handleChange}/>
 
-          <label htmlFor='managerEmail'>Manager's Email</label>
-          <input required type='email' name='managerEmail' id='managerEmail' value={newPosition.managerEmail} onChange={handleChange}/>
+          <label htmlFor='emailAddress'>Director's Email</label>
+          <input required type='email' name='emailAddress' id='emailAddress' value={newPosition.emailAddress} onChange={handleChange}/>
+          
+          <label htmlFor='locationAliases'>Location Aliases</label>
+          <textarea required name='locationAliases' id='locationAliases' value={newPosition.locationAliases} onChange={handleChange}/>
+          
 
-          
-          
           <button className='btn submit' onClick={submitForm}>Submit</button>
         </div>
 

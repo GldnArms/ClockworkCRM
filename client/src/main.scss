@@ -217,10 +217,11 @@ body{
     }
 
     .logout{
-        background-color: #EFEFEF;
+        background-color: #36CBC2;
         right: 2rem;
         padding: .5em 1em;
-        color: #36CBC2;
+        color: #EFEFEF;
+        font-weight: bold;
         position: absolute;
         &:hover{
             background-color: whitesmoke;
@@ -408,6 +409,11 @@ body{
         &:hover{
             color: white;
             background-color: black;
+        }
+        &.disabled{
+            color: white;
+            background-color: black;
+            cursor: not-allowed;
         }
     }
     .accounts{

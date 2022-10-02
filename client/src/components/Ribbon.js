@@ -11,6 +11,8 @@ export default function Ribbon({ setResultLimit, setFilterOptions, filterOptions
         <div className='limit function'>
           <h5 className='function-title'>Limit Results</h5>
           <select className='limit-select' defaultValue={50} onChange={changeLimit}>
+                <option value={1} >1</option>
+                <option value={5} >5</option>
                 <option value={10} >10</option>
                 <option value={15} >15</option>
                 <option value={30} >30</option>
